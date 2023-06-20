@@ -1,0 +1,7 @@
+{
+    "foodCard":{
+     "cardTitle":"title 1",
+     "description":"desc 1",
+     "price":"120",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+}}
