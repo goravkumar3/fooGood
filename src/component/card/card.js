@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 function Card() {
-  // const cardData;
-  useEffect(() => {
-    fetch("../../../public/card.json")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-    let itemNum=[1,2,3,4,5,6,7,8,9];
+//   useEffect(() => {
+//     fetch("../../../public/card.json")
+//       .then((response) => response.json())
+//       .then((data) =>console.log(data))
+//       .catch((err) => console.error(err));
+//   }, []);
   return (
     <div>
       <div className="card" style={{ width: "18rem" }}>
@@ -21,12 +17,17 @@ function Card() {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <select>
-            {itemNum.forEach((i,a)=>{
-                return<option key={i}>{a}</option>
+          <select id="inputState" className="form-select w-50">
+            {Array.from(Array(6),(e,i)=>{
+              return<option key={i} value={i+1}>{i+1}</option>
             })}
           </select>
-          <Link className="btn btn-primary">Add To Cart</Link>
+          
+          <select id="inputState" className="form-select w-50">
+            <option value="Half">Half</option>
+            <option value="Full">Full</option>
+          </select>
+          <Link className="btn btn-primary w-100">Add To Cart</Link>
         </div>
       </div>
     </div>
