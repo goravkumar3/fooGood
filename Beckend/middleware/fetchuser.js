@@ -1,6 +1,7 @@
 
 const jwt=require('jsonwebtoken');
-const JWT_Secert="notebookSeceret";
+
+const JWT_Secert="GoravisSecert";
 
 const fetchUser=async (req,res,next)=>{
     try {

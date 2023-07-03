@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const router = express.Router()
 const jwt = require('jsonwebtoken');
 const JWT_Secert="GoravisSecert";
-const fatchUser=require('./../middleware/fetchUser');
+const fatchUser=require('./../middleware/fetchuser');
 //create a user using: port'/api/auth/'
 router.post('/',[
     body('name').isLength({ min: 3 }).withMessage('Name must be at least 3 characters long'),
@@ -79,7 +79,7 @@ router.post('/login',[
     }
 })
 //userInfo
-router.post('/userInfo',fatchUser, async (req,res)=>{
+router.get('/userInfo',fatchUser, async (req,res)=>{
     
     try{
        let  userId=req.user.id;

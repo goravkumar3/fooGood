@@ -1,11 +1,15 @@
 const mongoose=require('mongoose')
 const {Schema}=mongoose;
 const orderSchema = new Schema({
-    name:{ type:String,
+    productItem:{ type:String,
            required:true}, // String is shorthand for {type: String}
-    email:{ type:String,
+    price:{ type:Number,
         required:true,
-        unique:true},
+        },
+    productQuantity:{
+        type:Number,
+        required:true,
+    },
     address:{ type:String,
         required:true},
     number:{ type:Number,
