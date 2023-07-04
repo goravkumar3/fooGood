@@ -4,6 +4,12 @@
      "description":"desc 1",
      "price":"120",
      "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+},
+{
+    "cardTitle":"title 2",
+     "description":"desc 3",
+     "price":"240",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
 }
 ]
 }
