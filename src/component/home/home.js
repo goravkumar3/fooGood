@@ -1,7 +1,22 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "../css/home.css";
 import Card from '../card/card'
 function Home() {
+  const [productitem,setproductItem]=useState([])
+  const load=async ()=>{
+const response = await fetch('http://127.0.0.1:5000/api/productData/', {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+          })
+      const Json = await response.json();
+      console.log(Json)
+      setproductItem(Json)
+  }
+  useEffect(()=>{
+    load()
+  },[])
   return (
     <>
       <div
@@ -101,7 +116,19 @@ function Home() {
         </button>
       </div>
       <div className="container">
-        <Card/>
+        {
+          productitem.map((data)=>{
+            return(
+              <div key={data._id}>
+                <h1>{data.FooGood.map((item)=>{
+                  return(
+                    <Card  title={item.cardTitle} url={item.imageURL} />
+                  )
+                })}</h1>
+              </div>
+            )
+          })
+        }
       </div>
     </>
   );
