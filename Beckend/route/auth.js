@@ -1,11 +1,18 @@
 const express = require('express')
 const User=require('./../module/User')
+// const multer = require('multer');
 const bcrypt = require('bcryptjs')
 const { body, validationResult } = require('express-validator');
 const router = express.Router()
 const jwt = require('jsonwebtoken');
 const JWT_Secert="GoravisSecert";
-const fatchUser=require('./../middleware/fetchuser');
+const fatchUser=require("../middleware/fetchuser");
+// const upload = multer({
+//     storage: multer.diskStorage({
+//       dest: "uploads",
+//     }),
+//   });
+  
 //create a user using: port'/api/auth/'
 router.post('/',[
     body('name').isLength({ min: 3 }).withMessage('Name must be at least 3 characters long'),

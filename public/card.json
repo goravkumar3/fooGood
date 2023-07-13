@@ -3,12 +3,41 @@
     "cardTitle":"title 1",
      "description":"desc 1",
      "price":"120",
+     "foodCat":"pizza",
      "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
 },
 {
     "cardTitle":"title 2",
      "description":"desc 3",
      "price":"240",
+     "foodCat":"pizza",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+},
+{
+    "cardTitle":"title 3",
+     "description":"desc 3",
+     "price":"120",
+     "foodCat":"pizza",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+},
+{
+    "cardTitle":"title 4",
+     "description":"desc 4",
+     "price":"240",
+     "foodCat":"pizza",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+},{
+    "cardTitle":"title 5",
+     "description":"desc 5",
+     "price":"120",
+     "foodCat":"pizza",
+     "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
+},
+{
+    "cardTitle":"title 6",
+     "description":"desc 6",
+     "price":"240",
+     "foodCat":"pizza",
      "imageURL":"../src/images/ivan-stern-LOLSb7m6XkU-unsplash.jpg"
 }
 ]

@@ -1,19 +1,31 @@
 import React,{useEffect,useState} from "react";
 import "../css/home.css";
 import Card from '../card/card'
+import '../css/home.css'
 function Home() {
   const [productitem,setproductItem]=useState([])
+  const [productCatg,setproductCatg]=useState([])
   const load=async ()=>{
-const response = await fetch('http://127.0.0.1:5000/api/productData/', {
+const response = await fetch('http://127.0.0.1:5000/api/productData/fetchProduct', {
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
               },
           })
+          const responseCtg = await fetch('http://127.0.0.1:5000/api/productCatg//FoodCatg', {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+        })
       const Json = await response.json();
       console.log(Json)
       setproductItem(Json)
-  }
+      
+      const JsonCatg = await responseCtg.json();
+      console.log(JsonCatg)
+      setproductCatg(JsonCatg)
+  }         
   useEffect(()=>{
     load()
   },[])
@@ -116,20 +128,29 @@ const response = await fetch('http://127.0.0.1:5000/api/productData/', {
         </button>
       </div>
       <div className="container">
-        {
-          productitem.map((data)=>{
-            return(
-              <div key={data._id}>
-                <h1>{data.FooGood.map((item)=>{
+                         {
+          productCatg.map((itemCatg)=>{
                   return(
-                    <Card  title={item.cardTitle} url={item.imageURL} />
+                    <div key={itemCatg._id}>
+                    <h1>{itemCatg.foodCatg}</h1>
+                    <hr />
+                    <div className="container px-4">
+                    <div className="row  gap-3">
+                    {
+          productitem.filter((food)=>food.foodCatg.toLowerCase()===itemCatg.foodCatg.toLowerCase()).map((item)=>{
+                  return(
+                    
+                      <div className="col-12 col-md-6 col-lg-4 col-xl-4 card"  key={item._id}>
+                    <Card  title={item.title} />
+                    </div>
                   )
-                })}</h1>
+                })}
+                </div>
+                </div>
+                    </div>
+                  )
+                })}
               </div>
-            )
-          })
-        }
-      </div>
     </>
   );
 }

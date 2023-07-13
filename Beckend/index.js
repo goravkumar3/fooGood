@@ -8,6 +8,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/api/auth/',require('./route/auth'))
 app.use('/api/productData',require('./route/product'))
+app.use('/api/productCatg',require('./route/foodCatg'))
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
